@@ -5,20 +5,20 @@
     <a href="{{ route('pengguna.create') }}" class="btn btn-primary float-right">Tambah Pengguna</a>
   </div>
     <div class="card-body">
-        <table class="table">
+        <table id="example2" class="table table-bordered table-hover">
             <thead>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Email</th>
-                <th scope="col">Role</th>
-                <th scope="col">Aksi</th>
+                <th>#</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
               @foreach ($data as $item)
               <tr>
-                <th scope="row">1</th>
+                <th>{{ $loop->iteration }}</th>
                 <td>{{$item->name}}</td>
                 <td>{{$item->email}}</td>
                 <td>{{$item->role}}</td>
@@ -33,6 +33,15 @@
               </tr>
               @endforeach
             </tbody>
+            <tfoot>
+              <tr>
+                <th>#</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Aksi</th>
+              </tr>
+            </tfoot>
           </table>
     </div>
     
